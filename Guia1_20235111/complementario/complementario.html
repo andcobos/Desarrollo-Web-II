@@ -7,12 +7,67 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Ejercicio Complementario</title>
   </head>
-  <body>
+  <body class="bg-zinc-600">
     <!-- Contenedor Global -->
-    <div class="flex items-center justify-center min-h-screen bg-pink-100">
-        <div class="bg-white p-6 m-3 space-y-10 shadow-2xl rounded-3xl md:p-40">
-            <h1 class="text-center text-2xl font-bold p-4">Titulo</h1>
+    <div class="flex flex-col min-h-screen">
+
+      <header class="relative bg-cover bg-center h-60 md:h-80 mb-10" style="background-image: url('https://cdn.wallpapersafari.com/40/11/LmRn1p.jpg');">
+        <!-- Contenedor para el texto -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4 bg-white 
+                    shadow-lg rounded-xl p-6 md:p-10 w-11/12 md:w-6/4 text-center">
+            <h1 class="text-2xl md:text-4xl font-bold text-gray-800">Tu Encabezado Aquí</h1>
+            <p class="mt-4 text-sm md:text-lg text-gray-600">Este es un subtítulo para complementar el texto principal.</p>
         </div>
+      </header>
+
+      <!-- Generos que me gustan-->
+      <section class="bg-black p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10">
+        <div class="m-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Contenedor 1 -->
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
+              <img src="" alt="foto1" class="w-full h-48 object-cover rounded-t-xl">
+              <p class="mt-4 text-lg font-medium">Comedia</p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
+              <img src="" alt="foto2" class="w-full h-48 object-cover rounded-t-xl">
+              <p class="mt-4 text-lg font-medium">Drama</p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
+              <img src="" alt="foto 3" class="w-full h-48 object-cover rounded-t-xl">
+              <p class="mt-4 text-lg font-medium">Acción</p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
+            <img src="" alt="foto 4" class="w-full h-48 object-cover rounded-t-xl">
+            <p class="mt-4 text-lg font-medium">Misterio</p>
+          </div>
+        </div>
+      </section>
+
+      <!--Titulo de Series de Acción-->
+      <h1 class="text-center text-2xl font-bold p-4">Series de Acción</h1>
+
+      <!-- Serie 1 Acción-->
+      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10">
+        <h2 class="text-xl md:text-3xl font-semibold">S.W.A.T.</h2>
+        <p class="text-justify text-sm md:text-lg">
+            Descripcion
+        </p>
+      </section>
+
+
+      <h1 class="text-center text-2xl font-bold p-4">Series de Comedia</h1>
+      <!-- Serie 2 Comedia-->
+      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10">
+        <h2 class="text-xl md:text-3xl font-semibold">The Middle</h2>
+        <p class="text-justify text-sm md:text-lg">
+            Descripción
+        </p>
+      </section>
+
+            
     </div>
   </body>
 </html>
