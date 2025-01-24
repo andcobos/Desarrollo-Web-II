@@ -7,67 +7,182 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Ejercicio Complementario</title>
   </head>
-  <body class="bg-zinc-600">
+  <body class="bg-zinc-200">
     <!-- Contenedor Global -->
     <div class="flex flex-col min-h-screen">
 
-      <header class="relative bg-cover bg-center h-60 md:h-80 mb-10" style="background-image: url('https://cdn.wallpapersafari.com/40/11/LmRn1p.jpg');">
+      <header class="relative bg-cover bg-center h-60 md:h-80 mb-10" style="background-image: url('https://img.freepik.com/free-photo/film-elements-red-background-with-copy-space_23-2148457854.jpg');">
         <!-- Contenedor para el texto -->
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4 bg-white 
                     shadow-lg rounded-xl p-6 md:p-10 w-11/12 md:w-6/4 text-center">
-            <h1 class="text-2xl md:text-4xl font-bold text-gray-800">Tu Encabezado Aquí</h1>
-            <p class="mt-4 text-sm md:text-lg text-gray-600">Este es un subtítulo para complementar el texto principal.</p>
+            <h1 class="text-6xl md:text-6xl font-bold text-gray-800">Series Favoritas</h1>
+            <p class="mt-4 text-xl md:text-lg text-gray-600">Andrea Cobos 20235111 - Domingo 26 de Enero de 2024</p>
         </div>
       </header>
 
       <!-- Generos que me gustan-->
-      <section class="bg-black p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10">
+      <section class="p-6 m-10 space-y-4 rounded-xl md:p-10">
+        <h2 class="text-center text-2xl md:text-4xl font-bold text-gray-800 mb-10">Géneros</h1>
         <div class="m-10 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <!-- Contenedor 1 -->
-          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
-              <img src="" alt="foto1" class="w-full h-48 object-cover rounded-t-xl">
-              <p class="mt-4 text-lg font-medium">Comedia</p>
-          </div>
 
-          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
-              <img src="" alt="foto2" class="w-full h-48 object-cover rounded-t-xl">
-              <p class="mt-4 text-lg font-medium">Drama</p>
+          <!-- Contenedores -->
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center duration-300 hover:scale-105">
+            <div class="flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/12355/12355765.png" alt="accion" 
+                     class="h-auto max-w-xs max-h-48 min-w-[100px] object-cover rounded-t-xl">
+            </div>
+            <p class="mt-4 text-lg font-medium">Acción</p>
           </div>
-
-          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
-              <img src="" alt="foto 3" class="w-full h-48 object-cover rounded-t-xl">
-              <p class="mt-4 text-lg font-medium">Acción</p>
+          
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center duration-300 hover:scale-105">
+            <div class="flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/6552/6552996.png" alt="comedia" 
+                    class="h-auto max-w-xs max-h-48 min-w-[100px] object-cover rounded-t-xl">
+            </div>
+            <p class="mt-4 text-lg font-medium">Comedia</p>
           </div>
-
-          <div class="bg-white rounded-xl shadow-lg p-4 text-center">
-            <img src="" alt="foto 4" class="w-full h-48 object-cover rounded-t-xl">
+          
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center duration-300 hover:scale-105">
+            <div class="flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/4283/4283635.png" alt="drama" 
+                    class="h-auto max-w-xs max-h-48 min-w-[100px] object-cover rounded-t-xl">
+            </div>
+            <p class="mt-4 text-lg font-medium">Drama</p>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-lg p-4 text-center duration-300 hover:scale-105">
+            <div class="flex justify-center items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/2249/2249113.png" alt="misterio" 
+                    class="h-auto max-w-xs max-h-48 min-w-[100px] object-cover rounded-t-xl">
+            </div>
             <p class="mt-4 text-lg font-medium">Misterio</p>
           </div>
         </div>
       </section>
 
-      <!--Titulo de Series de Acción-->
-      <h1 class="text-center text-2xl font-bold p-4">Series de Acción</h1>
-
-      <!-- Serie 1 Acción-->
-      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10">
-        <h2 class="text-xl md:text-3xl font-semibold">S.W.A.T.</h2>
-        <p class="text-justify text-sm md:text-lg">
-            Descripcion
-        </p>
-      </section>
-
-
-      <h1 class="text-center text-2xl font-bold p-4">Series de Comedia</h1>
-      <!-- Serie 2 Comedia-->
-      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10">
-        <h2 class="text-xl md:text-3xl font-semibold">The Middle</h2>
-        <p class="text-justify text-sm md:text-lg">
-            Descripción
-        </p>
-      </section>
-
+      
+      <!-- SWAT-->
+      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10 flex flex-col md:flex-row items-center md:items-start gap-6">
+        <div>
+            <img src="https://m.media-amazon.com/images/I/61ccn468YJL._AC_UF894,1000_QL80_.jpg" 
+                 alt="SWAT Poster" 
+                 class="h-auto max-w-md max-h-100 min-w-[250px] min-h-[350px] object-cover rounded-lg">
+        </div>
+        <div class="flex-1">
+            <h2 class="text-xl md:text-3xl font-semibold mb-4">S.W.A.T.</h2>
+            <p class="text-justify text-sm md:text-lg mb-4 text-gray-400">
+              +13 / Género: Acción - Inicio: 2017 - Temporadas: 8 - Disponible en: Netflix, Disney Plus & Prime Video
+            <p class="text-justify text-sm md:text-lg mb-4">
+                Descripción:S.W.A.T. es una serie de televisión que sigue a un sargento del Departamento de Policía de Los Ángeles que dirige una unidad de élite de Armas y Tácticas Especiales (S.W.A.T.). 
+                La serie muestra la vida de los miembros de esta unidad y las tensiones que enfrentan en su comunidad. 
+            </p>
             
+          </p>
+            <h3 class="text-lg md:text-xl font-semibold mb-2">Casting</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm md:text-lg">
+                <li>Shemar Moore: Sergeant Daniel 'Hondo' Harrelson</li>
+                <li>Jay Harrington: Sergeant David 'Deacon' Kay</li>
+                <li>David Lim: Officer Victor Tan</li>
+                <li>Patrick St. Esprit: Commander Robert 'Bob' Hicks</li>
+                <li>Kenny Johnson: Officer Dominique Luca</li>
+                <li>Alex Russell: Officer Jim Street</li>
+                <li>Lina Esco: Officer Chris Alonso</li>
+            </ul>
+        </div>
+      </section>
+
+      <!--Middle-->
+      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10 flex flex-col md:flex-row items-center md:items-start gap-6">
+        <div>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9-IHSxQYAmdEpGzq_adQCGrD_HIC-M0aCaLen-HOdF5Xry_EguE8TOyK_PoljSMHjRoUGW7MMzUv9e_hyS1upbYxOEoJvwdlih6ugK3p_SwMYg-NklqaVvMKSeVTxCJY-Zq70LQ/s1600/The-Middle-Key-Art-768x1024.jpg" 
+                 alt="The middle poster" 
+                 class="h-auto max-w-md max-h-100 min-w-[250px] min-h-[350px] object-cover rounded-lg">
+        </div>
+        <div class="flex-1">
+            <h2 class="text-xl md:text-3xl font-semibold mb-4">The Middle</h2>
+            <p class="text-justify text-sm md:text-lg mb-4 text-gray-400">
+              +7 / Género: Comedia - Inicio: 2009 - Temporadas: 9 - Disponible en: MAX
+            <p class="text-justify text-sm md:text-lg mb-4">
+                Descripción: The Middle (Una familia modelo en algunas partes de Hispanoamérica) es una comedia de situación estadounidense que trata sobre una familia de clase trabajadora que vive en 
+                Orson, Indiana y enfrenta las luchas cotidianas de la vida en el hogar, el trabajo y la crianza de los hijos.
+            </p>
+          </p>
+            <h3 class="text-lg md:text-xl font-semibold mb-2">Casting</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm md:text-lg">
+                <li>Patricia Heaton: Frankie Heck</li>
+                <li>Neil Flynn: Mike Heck</li>
+                <li>Charlie McDermott: Axl Heck</li>
+                <li>Eden Sher: Sue Heck</li>
+                <li>Atticus Shaffer: Brick Heck</li>
+            </ul>
+        </div>
+      </section>
+
+      <!--Greys Anatomy-->
+      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10 flex flex-col md:flex-row items-center md:items-start gap-6">
+        <div>
+            <img src="https://www.movieposters.com/cdn/shop/products/greysanatomy.125810.ar_480x.progressive.jpg?v=1573855580" 
+                 alt="Greys anatomy poster" 
+                 class="h-auto max-w-md max-h-100 min-w-[250px] min-h-[350px] object-cover rounded-lg">
+        </div>
+        <div class="flex-1">
+            <h2 class="text-xl md:text-3xl font-semibold mb-4">Grey's Anatomy</h2>
+            <p class="text-justify text-sm md:text-lg mb-4 text-gray-400">
+              +14 / Género: Drama - Inicio: 2005 - Temporadas: 21 - Disponible en: Disney Plus
+            <p class="text-justify text-sm md:text-lg mb-4">
+                Descripción: Grey's Anatomy es una serie estadounidense de drama médico creada por Shonda Rhimes, que sigue las vidas de los cirujanos 
+                en el ficticio hospital Grey Sloan Memorial, ubicado en Seattle (Inicialmente el "Hospital Grace de Seattle"). A pesar de contar con 
+                varios personajes principales, el personaje central y titular es la doctora Meredith Grey, que también es la narradora principal del programa.
+            </p>
+          </p>
+            <h3 class="text-lg md:text-xl font-semibold mb-2">Casting</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm md:text-lg">
+                <li>Ellen Pompeo: Dr. Meredith Grey</li>
+                <li>Chandra Wilson: Dr. Miranda Bailey</li>
+                <li>James Pickens Jr.: Dr. Richard Webber</li>
+                <li>Justin Chambers: Dr. Alex Karev</li>
+                <li>Kevin McKidd: Dr. Owen Hunt</li>
+                <li>Jesse Williams: Dr. Jackson Avery</li>
+                <li>Patrick Dempsey: Dr. Derek Shepherd</li>
+                <li>Sandra Oh: Dr. Cristina Yang</li>
+                <li>Sarah Drew: Dr. April Kepner</li>
+            </ul>
+        </div>
+      </section>
+
+      <!-- Only murders on the building-->
+      <section class="bg-white p-6 m-10 space-y-4 shadow-xl rounded-xl md:p-10 flex flex-col md:flex-row items-center md:items-start gap-6">
+        <div>
+            <img src="https://image.tmdb.org/t/p/original/ujiesZkMQdjtbdxaa2U97ROrlBN.jpg" 
+                 alt="Only murders on the building posterr" 
+                 class="h-auto max-w-md max-h-100 min-w-[250px] min-h-[350px] object-cover rounded-lg">
+        </div>
+        <div class="flex-1">
+            <h2 class="text-xl md:text-3xl font-semibold mb-4">Only Murders in the building</h2>
+            <p class="text-justify text-sm md:text-lg mb-4 text-gray-400">
+              +7 / Género: Misterio - Inicio: 2021 - Temporadas: 4 - Disponible en: Disney Plus
+            <p class="text-justify text-sm md:text-lg mb-4">
+                Descripción: Solo asesinatos en el edificio es una serie de televisión estadounidense que trata sobre tres personas obsesionadas 
+                con los crímenes reales que se ven envueltos en uno de ellos. La serie se desarrolla en un edificio de apartamentos del Upper West 
+                Side de Nueva York, donde se produce una muerte violenta. Los tres protagonistas, que conocen a fondo los crímenes reales, sospechan de un asesinato y se ponen a investigar. 
+            </p>
+          </p>
+            <h3 class="text-lg md:text-xl font-semibold mb-2">Casting</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm md:text-lg">
+                <li>Steve Martin: Charles-Haden Savage</li>
+                <li>Martin Short: Oliver Putnamy</li>
+                <li>Selena Gomez: Mabel Mora</li>
+                <li>Michael Cyril Creighton: Howard Morris</li>
+                <li>Jackie Hoffman: Uma Heller</li>
+                <li>Paul Rudd: Ben Glenroy</li>
+                <li>Amy Ryan: Jan Bellows</li>
+            </ul>
+        </div>
+      </section>
     </div>
   </body>
+  <footer class="bg-red-600 font-semibold text-gray-100 text-center py-20 mt-10">
+    <p class="text-sm">Desarrollo Web II</p>
+    <p class="text-sm">Ciclo 01 2025</p>
+  </footer>
 </html>
