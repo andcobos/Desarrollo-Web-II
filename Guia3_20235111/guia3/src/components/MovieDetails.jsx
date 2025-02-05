@@ -52,6 +52,7 @@ export const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }
         onAddWatched(newMovie);
         onCloseMovie(); // Cierra los detalles después de agregar
     }
+
     return (
         <div className="details">
             {isLoading ? (
@@ -98,3 +99,4 @@ export const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }
         </div>
     );
 };
+
