@@ -12,10 +12,10 @@ import { MovieDetails } from "./components/MovieDetails";
 */
 export default function App() {
 
-  // Estado para la búsqueda de películas
+  // Estado para la búsqueda de películas, actualiza esta varible de estado
   const [query, setQuery] = useState("");
 
-  // Obtiene películas basadas en la consulta
+  // Obtiene películas basadas en la consulta, mandi a llamar el custom hook
   const { movies, isLoading, error } = useFetchMovies(query);
 
   // Estado de películas vistas
@@ -60,6 +60,7 @@ export default function App() {
           {error && <p className="error">⛔ {error}</p>}
           <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
         </Box>
+        
         <Box>
           <WatchedMoviesContainer>
             {selectedId ? (
@@ -81,3 +82,6 @@ export default function App() {
     </>
   );
 }
+
+///& es un if simple
+//59 si la variable esta vacia muestra el mensaje de error

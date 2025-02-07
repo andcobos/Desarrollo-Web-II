@@ -32,8 +32,8 @@ export function useFetchMovieDetails(selectedId) {
             try {
                 setIsLoading(true); // Activa el estado de carga
                 setError(null); // Reinicia errores previos
-                // Petición a la API de OMDb con la clave de acceso y el ID de la
-                película
+
+                // Petición a la API de OMDb con la clave de acceso y el ID de la pelicula
                 const response = await
                     fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${selectedId}`);
                 // Verifica si la respuesta HTTP es correcta

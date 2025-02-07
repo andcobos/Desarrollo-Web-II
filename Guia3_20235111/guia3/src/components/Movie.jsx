@@ -17,6 +17,7 @@ export const MovieList = ({ movies, onSelectMovie }) => {
         </ul>
     );
 };
+//13 movielist le pasa la funcion a movie y tiene como prop onSelectMoie
 
 /**
 * Componente que muestra los detalles básicos de una película.

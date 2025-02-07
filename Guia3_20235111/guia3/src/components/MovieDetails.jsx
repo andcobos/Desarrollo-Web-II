@@ -28,10 +28,13 @@ export const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }
         Director: director,
         Genre: genre
     } = movie;
+
     // Estado para la calificación del usuario
     const [userRating, setUserRating] = useState('');
+
     // Verifica si la película ya está en la lista de vistas
     const isWatched = watched.some(movie => movie.imdbID === selectedId);
+    
     // Obtiene la calificación previa del usuario si ya la ha visto
     const watchedUserRating = watched.find(movie => movie.imdbID ===
         selectedId)?.userRating;
