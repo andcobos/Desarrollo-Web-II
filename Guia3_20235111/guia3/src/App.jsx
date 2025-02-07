@@ -47,6 +47,12 @@ export default function App() {
   function handleAddWatched(movie) {
     setWatched((watched) => [...watched, movie]);
   }
+
+  //funcion para eliminar
+  function handleDeleteWatched(id) {
+    setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
+  }
+  
   return (
     <>
       <Nav>
@@ -60,7 +66,7 @@ export default function App() {
           {error && <p className="error">⛔ {error}</p>}
           <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
         </Box>
-        
+
         <Box>
           <WatchedMoviesContainer>
             {selectedId ? (
@@ -73,7 +79,7 @@ export default function App() {
             ) : (
               <>
                 <WatchedSummary watched={watched} />
-                <WatchedMoviesList watched={watched} />
+                <WatchedMoviesList watched={watched} onDeleteWatched={handleDeleteWatched}/>
               </>
             )}
           </WatchedMoviesContainer>
