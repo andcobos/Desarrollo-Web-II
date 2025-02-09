@@ -6,6 +6,7 @@ import { WatchedMoviesContainer, WatchedMoviesList, WatchedSummary } from
   "./components/WatchedMovie";
 import { useFetchMovies } from "./hooks/useFetchMovies";
 import { MovieDetails } from "./components/MovieDetails";
+import { useEffect } from "react";
 
 /**
 * Componente principal de la aplicación.
@@ -18,9 +19,16 @@ export default function App() {
   // Obtiene películas basadas en la consulta, mandi a llamar el custom hook
   const { movies, isLoading, error } = useFetchMovies(query);
 
-  // Estado de películas vistas
-  const [watched, setWatched] = useState([]);
+  // Estado de películas vistas y guardarlas en la BD
+  const [watched, setWatched] = useState(() => {
+      const storedWatched = localStorage.getItem("watchedMovies");
+      return storedWatched ? JSON.parse(storedWatched) : [];
+  });
 
+  useEffect(() => {
+    localStorage.setItem("watchedMovies", JSON.stringify(watched));
+  }, [watched]);
+  
   // Estado para la película seleccionada
   const [selectedId, setSelectedId] = useState(null);
 
