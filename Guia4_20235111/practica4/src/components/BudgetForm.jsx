@@ -3,13 +3,13 @@ import { BudgetDispatchContext } from "../context/BudgetContext"; // Importamos 
 
 export const BudgetForm = () => {
     const [budget, setBudget] = useState(0);
-    const dispatch = useContext(BudgetDispatchContext); // Obtenemos dispatch del contexto
-
     const isInvalid = isNaN(budget) || budget <= 0; // Si no es un número > 0 es inválido
 
     const handleChange = (e) => {
         setBudget(e.target.valueAsNumber);
     };
+
+    const dispatch = useContext(BudgetDispatchContext); // Obtenemos dispatch del contexto
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,9 +23,7 @@ export const BudgetForm = () => {
         <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-5">
                 <label 
-                    htmlFor="budget" 
-                    className="text-4xl text-blue-600 font-bold text-center"
-                >
+                    htmlFor="budget" className="text-4xl text-blue-600 font-bold text-center">
                     Definir presupuesto
                 </label>
             </div>

@@ -25,6 +25,7 @@ export const ExpenseForm = () => {
 
         setExpense({
             ...expense,
+
             [name]: isAmountField ? Number(value) : value,
         });
     }
@@ -38,19 +39,19 @@ export const ExpenseForm = () => {
     }
 
     // Validación formulario
-    const handleSubmit = (e) => {
-        e.preventDefault();
+const handleSubmit = (e) => {
+    e.preventDefault();
 
-        // Validación
-        if (Object.values(expense).includes('')) {
-            setError('Todos los Campos son Obligatorios')
-            return;
-        }
+    // Validación
+    if (Object.values(expense).includes('')) {
+        setError('Todos los Campos son Obligatorios')
+        return;
+    }
 
         dispatch({ type: 'add-expense', payload: { expense } })
 
 
-        // Reiniciar el state/form
+    // Reiniciar el state/form
     setExpense({
         expenseName: "",
         amount: 0,
@@ -59,7 +60,7 @@ export const ExpenseForm = () => {
         })
     }
 
-    return (
+      return (
         <form className="space-y-5" onSubmit={handleSubmit}>
             <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
                 Nuevo gasto
@@ -138,6 +139,6 @@ export const ExpenseForm = () => {
                 value="Registrar gasto"
             />
         </form>
-    )
+      )
 }
 
