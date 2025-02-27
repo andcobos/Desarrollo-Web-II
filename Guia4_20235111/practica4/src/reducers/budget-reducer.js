@@ -55,10 +55,18 @@ export const budgetReducer = (state, action) => {
             }
         case "add-filter-category":
             return { ...state, currentCategory: action.payload.categoryId }
-            
+        case "reset-app":
+            localStorage.clear();
+            return {
+                budget: 0,
+                modal: false,
+                expenses: [],
+                editingId: "",
+                currentCategory: ""
+            };  
         default:
             return state;
     }
 }
 
-export default initialBudget;
+export default budgetReducer;

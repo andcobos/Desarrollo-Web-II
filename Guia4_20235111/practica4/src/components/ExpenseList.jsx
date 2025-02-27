@@ -18,8 +18,8 @@ export const ExpenseList = () => {
             ) : (
                 <>
                     <p className="text-gray-600 text-2xl font-bold my-5">Listado de gastos</p>
-                    {filteredExpenses.map((expense, index) => (
-                        <ExpenseDetails key={index} expense={expense} />
+                    {filteredExpenses.map((expense) => (
+                        <ExpenseDetails key={expense.id} expense={expense} />
                     ))}
                 </>
             )}
