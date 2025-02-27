@@ -1,16 +1,26 @@
 import { BudgetForm } from "./components/BudgetForm"; 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { BudgetStateContext } from "./context/BudgetContext";
 import BudgetTracker from "./components/BudgetTracker";
 import ExpenseModal from "./components/ExpenseModal";
 import ExpenseList from "./components/ExpenseList";
 import FilterByCategory from "./components/FilterByCategory";
 
-function App(){
-    const state=useContext(BudgetStateContext)
-    const isValidBudget= state.budget>0;
+function App() {
+    const state = useContext(BudgetStateContext);
+    const isValidBudget = state.budget > 0;
 
-    return(
+    useEffect(() => {
+        console.log("Guardando presupuesto en localStorage:", state.budget);
+        localStorage.setItem("budget", state.budget.toString());
+    }, [state.budget]);
+
+    useEffect(() => {
+        console.log("Guardando gastos en localStorage:", state.expenses);
+        localStorage.setItem("expenses", JSON.stringify(state.expenses));
+    }, [state.expenses]);
+
+    return (
         <>
             <header className="bg-blue-600 py-8 max-h-72">
                 <h1 className="uppercase text-center font-black text-4xl text-white">
@@ -21,18 +31,15 @@ function App(){
                 {isValidBudget ? <BudgetTracker /> : <BudgetForm />}
             </div>
 
-                {isValidBudget && (
-                    <main className="max-w-3xl mx-auto py-10">
-                        <FilterByCategory />
-                        <ExpenseList/>
-                        <ExpenseModal />
-                    </main>
-                )
-                }
-
-            
+            {isValidBudget && (
+                <main className="max-w-3xl mx-auto py-10">
+                    <FilterByCategory />
+                    <ExpenseList />
+                    <ExpenseModal />
+                </main>
+            )}
         </>
-    )
+    );
 }
 
-export default App
+export default App;
