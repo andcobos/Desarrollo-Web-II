@@ -8,7 +8,6 @@ const localStorageExpenses = () => {
     return localStorageExpenses ? JSON.parse(localStorageExpenses) : [];
 };
 
-
 export const initialState = {
     budget: initialBudget(),
     modal: false,
@@ -16,7 +15,6 @@ export const initialState = {
     editingId: "",
     currentCategory: ""
 }
-
 
 export const budgetReducer = (state, action) => {
     switch (action.type) {
@@ -62,3 +60,5 @@ export const budgetReducer = (state, action) => {
             return state;
     }
 }
+
+export default initialBudget;
