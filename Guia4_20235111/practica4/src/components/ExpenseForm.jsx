@@ -5,6 +5,7 @@ import 'react-date-picker/dist/DatePicker.css'
 import 'react-calendar/dist/Calendar.css'
 import { BudgetDispatchContext, BudgetStateContext } from '../context/BudgetContext'
 import ErrorMessage from './ErrorMessage'
+import { useEffect } from 'react'
 
 export const ExpenseForm = () => {
 
@@ -18,6 +19,17 @@ export const ExpenseForm = () => {
     const [error, setError] = useState('');
     const dispatch = useContext(BudgetDispatchContext);
     const state = useContext(BudgetStateContext);
+
+    useEffect(() => {
+        if (state.editingId) {
+            const editingExpense = state.expenses.find(
+                (currentExpense) => currentExpense.id === state.editingId
+            );
+            if (editingExpense) {
+                setExpense(editingExpense);
+            }
+        }
+    }, [state.editingId]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -39,31 +51,35 @@ export const ExpenseForm = () => {
     }
 
     // Validación formulario
-const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validación
-    if (Object.values(expense).includes('')) {
-        setError('Todos los Campos son Obligatorios')
-        return;
-    }
-
-        dispatch({ type: 'add-expense', payload: { expense } })
-
-
-    // Reiniciar el state/form
-    setExpense({
-        expenseName: "",
-        amount: 0,
-        category: "",
-        date: new Date(),
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        // Validación
+        if (Object.values(expense).includes('')) {
+            setError('Todos los Campos son Obligatorios')
+            return
+        }
+    
+        if (state.editingId) {
+            dispatch({ type: 'update-expense', payload: { expense: { id: state.editingId, ...expense } } })
+        } else {
+            dispatch({ type: 'add-expense', payload: { expense } })
+        }
+    
+        // Reiniciar el state/form
+        setExpense({
+            expenseName: "",
+            amount: 0,
+            category: "",
+            date: new Date(),
         })
     }
+    
 
       return (
         <form className="space-y-5" onSubmit={handleSubmit}>
             <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
-                Nuevo gasto
+                {state.editingId ? "Guardar Cambios" : "Nuevo Gasto"}
             </legend>
     
             {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -136,7 +152,7 @@ const handleSubmit = (e) => {
             <input
                 type="submit"
                 className="bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
-                value="Registrar gasto"
+                value={state.editingId ? "Guardar Cambios" : "Registrar Gasto"}
             />
         </form>
       )

@@ -18,3 +18,5 @@ export const ExpenseList = () => {
     )
 
 }
+
+export default ExpenseList;
