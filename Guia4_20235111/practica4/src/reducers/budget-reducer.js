@@ -25,14 +25,21 @@ export const budgetReducer = (state, action) => {
         case "close-modal":
             return { ...state, modal: false, editingId: "" }
         case "add-expense":
+            const totalAfterAdd = state.expenses.reduce((total, exp) => total + exp.amount, 0) + action.payload.expense.amount;
+            
+            if (totalAfterAdd > state.budget) {
+                return { ...state, error: "Esta cantidad sobrepasa el presupuesto." };
+            }
+            
             return {
                 ...state,
                 expenses: [
                     ...state.expenses,
                     { ...action.payload.expense, id: new Date().getTime() }
                 ],
-                modal: false
-            }
+                modal: false,
+                error: "" 
+            };
         case "remove-expense":
             return{
                 ...state,

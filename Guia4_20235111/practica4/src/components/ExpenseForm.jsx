@@ -81,6 +81,10 @@ export const ExpenseForm = () => {
             <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
                 {state.editingId ? "Guardar Cambios" : "Nuevo Gasto"}
             </legend>
+
+            {state.error && (
+                <p className="text-red-500 font-bold text-center">{state.error}</p>
+            )}
     
             {error && <ErrorMessage>{error}</ErrorMessage>}
     
