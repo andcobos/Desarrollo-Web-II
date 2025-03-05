@@ -14,3 +14,10 @@ export async function getRecipes(filters) {
     const { data } = await axios(url);
     return data;
 }
+
+// Función para obtener una receta por su ID
+export async function getRecipeById(id) {
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const { data } = await axios(url);
+    return data.drinks ? data.drinks[0] : null;
+}

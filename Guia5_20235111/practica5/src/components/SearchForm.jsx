@@ -15,6 +15,7 @@ export default function SearchForm() {
         });
     };
 
+    const searchRecipes = useAppStore((state) => state.searchRecipes);
     const fetchCategories = useAppStore((state) => state.fetchCategories);
     const categories = useAppStore((state) => state.categories);
 
@@ -22,8 +23,21 @@ export default function SearchForm() {
         fetchCategories();
     }, []);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validar si algún campo está vacío
+        if (Object.values(searchFilters).includes('')) {
+            console.log('Todos los campos son obligatorios');
+            return;
+        }
+
+        // Consultar las recetas si la validación pasa
+        searchRecipes(searchFilters);
+    };
+
     return (
-        <form 
+        <form onSubmit={handleSubmit}
             className='md:w-1/2 2xl:w-1/3 bg-orange-400 my-16 p-10 rounded-lg shadow space-y-6'
         >
             <div className='space-y-4'>
