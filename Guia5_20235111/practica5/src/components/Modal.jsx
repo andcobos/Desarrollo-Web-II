@@ -7,6 +7,12 @@ export default function Modal() {
     const modal = useAppStore((state) => state.modal)
     const closeModal = useAppStore((state) => state.closeModal)
     const selectedRecipe = useAppStore((state) => state.selectedRecipe)
+
+    //funcion agregar a favoritos
+    const handleClickFavorite = useAppStore((state) => state.handleClickFavorite);
+    const favoriteExists = useAppStore((state) => state.favoriteExists);
+
+
     //Funcion para renderizar la lista de ingredientes de una bebida
     const renderIngredients = () => {
         const ingredients = []
@@ -24,7 +30,7 @@ export default function Modal() {
         return ingredients
     }
     return (
-<>
+        <>
             <Transition appear show={modal} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <TransitionChild
@@ -68,9 +74,13 @@ export default function Modal() {
                                             onClick={closeModal}>
                                             Cerrar
                                         </button>
-                                        <button type='button'
+                                        <button type='button' onClick={() => {
+                                            //{ favoriteExists(selectedRecipe.idDrink) ? alert('Eliminado de favoritos') : alert}
+                                            handleClickFavorite(selectedRecipe)
+                                            closeModal()
+                                        }}
                                             className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'>
-                                            Agregar a favoritos
+                                            {favoriteExists(selectedRecipe.idDrink) ? 'Eliminar favorito' : 'Agregar a Favoritos'}
                                         </button>
                                     </div>
                                 </DialogPanel>
