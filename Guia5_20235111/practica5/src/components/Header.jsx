@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { useLocation } from 'react-router'
+import SearchForm from './SearchForm'
 
 export default function Header() {
     const { pathname } = useLocation() // esta variable tendrá / o /favoritos dependiendo de la página actual
@@ -18,6 +19,9 @@ export default function Header() {
                         <Link to="/favoritos" className='text-white uppercase font-bold'>Favoritos</Link>
                     </nav>
                 </div>
+                {isHome && (
+                    <SearchForm />
+                )}
             </div>
         </header>
     )
