@@ -55,35 +55,47 @@ export default function Modal() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w- 2xl sm:p-6" >
-                                    <DialogTitle as="h3" className="text-gray-900 text-4xl font- extrabold my-5 text-center">
+                                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white p-6 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
+                                    <DialogTitle as="h3" className="text-gray-900 text-3xl font-extrabold">
                                         {selectedRecipe.strDrink}
                                     </DialogTitle>
-                                    <img src={selectedRecipe.strDrinkThumb} alt={`Imagen de ${selectedRecipe.strDrink}`} />
-                                    <DialogTitle as="h3" className="text-gray-900 text-2xl font- extrabold my-5">
+                                    <img
+                                        src={selectedRecipe.strDrinkThumb}
+                                        alt={`Imagen de ${selectedRecipe.strDrink}`}
+                                        className="w-full max-h-96 object-cover mt-4"
+                                    />
+
+                                    <DialogTitle as="h3" className="text-gray-900 text-xl font-extrabold mt-6">
                                         Ingredientes y Cantidades
                                     </DialogTitle>
-                                    <ul> {renderIngredients()}</ul>
-                                    <DialogTitle as="h3" className="text-gray-900 text-2xl font- extrabold my-5">
+                                    <ul className="text-lg mt-2">{renderIngredients()}</ul>
+
+                                    <DialogTitle as="h3" className="text-gray-900 text-xl font-extrabold mt-6">
                                         Instrucciones
                                     </DialogTitle>
-                                    <p className='text-lg'>{selectedRecipe.strInstructions}</p>
-                                    <div className='mt-5 flex justify-between gap-4'>
-                                        <button type='button'
-                                            className='w-full rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500'
-                                            onClick={closeModal}>
+                                    <p className="text-lg mt-2">{selectedRecipe.strInstructions}</p>
+
+                                    <div className="mt-6 flex justify-between gap-4">
+                                        <button
+                                            type="button"
+                                            className="w-1/2 rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500"
+                                            onClick={closeModal}
+                                        >
                                             Cerrar
                                         </button>
-                                        <button type='button' onClick={() => {
-                                            //{ favoriteExists(selectedRecipe.idDrink) ? alert('Eliminado de favoritos') : alert}
-                                            handleClickFavorite(selectedRecipe)
-                                            closeModal()
-                                        }}
-                                            className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'>
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                handleClickFavorite(selectedRecipe);
+                                                closeModal();
+                                            }}
+                                            className="w-1/2 rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500"
+                                        >
                                             {favoriteExists(selectedRecipe.idDrink) ? 'Eliminar favorito' : 'Agregar a Favoritos'}
                                         </button>
                                     </div>
                                 </DialogPanel>
+
                             </TransitionChild>
                         </div>
                     </div>
