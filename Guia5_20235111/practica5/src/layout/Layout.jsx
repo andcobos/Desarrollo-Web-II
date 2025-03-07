@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import Modal from "../components/Modal"
 import { useAppStore } from "../store/useAppStore"
 import { useEffect } from "react"
+import Notifications from "../components/Notifications"
 
 export default function Layout() {
 
@@ -18,6 +19,7 @@ export default function Layout() {
                 <Outlet />
             </main>
             <Modal />
+            <Notifications />
 
         </>
     )

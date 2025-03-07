@@ -18,6 +18,7 @@ export default function SearchForm() {
     const searchRecipes = useAppStore((state) => state.searchRecipes);
     const fetchCategories = useAppStore((state) => state.fetchCategories);
     const categories = useAppStore((state) => state.categories);
+    const addNotification = useAppStore((state) => state.addNotification);
 
     useEffect(() => {
         fetchCategories();
@@ -28,7 +29,7 @@ export default function SearchForm() {
 
         // Validar si algún campo está vacío
         if (Object.values(searchFilters).includes('')) {
-            console.log('Todos los campos son obligatorios');
+            addNotification("Todos los campos son obligatorios", "error");
             return;
         }
 
