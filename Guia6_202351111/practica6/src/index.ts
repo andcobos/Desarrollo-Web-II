@@ -9,11 +9,9 @@ app.use(express.json()); // Middleware para procesar JSON en las solicitudes
 app.use('/', router); // Configuración de rutas
 
 connectBD().then(() => {
-    console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
-});
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
+    app.listen(PORT, () => {
+        console.log(`Servidor corriendo en el puerto ${PORT}`);
+    });
 });
 
 export default app;

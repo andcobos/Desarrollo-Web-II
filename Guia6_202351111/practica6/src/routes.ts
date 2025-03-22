@@ -10,7 +10,7 @@ router.get('/', (req: Request, res: Response) => {
 
 router.post('/auth/register', async(req, res) => {
   console.log(req.body);
-  const user=new User(req.body);
+  const user= new User(req.body);
   await user.save();
   res.status(201).json({ message: 'Datos del usuario recibidos con éxito' });
 });
